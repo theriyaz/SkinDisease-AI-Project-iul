@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkinDisease AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            SkinDisease<span>AI</span>
+        </div>
+
+        <button
+            id="themeBtn"
+            class="theme-btn"
+            type="button"
+            aria-label="Toggle dark mode"
+        >
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <p class="badge">
+                AI • DERMOSCOPIC ANALYSIS
+            </p>
+
+            <h1>
+                Explainable Skin Disease
+                <span>Classification</span>
+            </h1>
+
+            <p class="subtitle">
+                Upload a dermoscopic image and our
+                deep learning model will analyze it
+                across seven skin disease categories.
+            </p>
+
+        </section>
+
+
+        <!-- ================= UPLOAD CARD ================= -->
+
+        <section class="upload-card">
+
+            <div
+                id="dropArea"
+                class="drop-area"
+            >
+
+                <div class="upload-icon">
+                    ⬆
+                </div>
+
+                <h2>
+                    Upload Dermoscopic Image
+                </h2>
+
+                <p>
+                    Drag &amp; drop your image here
+                    or choose a file
+                </p>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button
+                    id="chooseBtn"
+                    class="choose-btn"
+                    type="button"
+                >
+                    Choose Image
+                </button>
+
+            </div>
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="previewContainer"
+                class="preview-container hidden"
+            >
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Selected dermoscopic image"
+                >
+
+                <button
+                    id="analyzeBtn"
+                    class="analyze-btn"
+                    type="button"
+                >
+                    Analyze Image
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOADING ================= -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                AI is analyzing the image...
+            </p>
+
+        </div>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            id="result"
+            class="result hidden"
+        >
+
+            <div class="result-header">
+
+                <p class="result-label">
+                    AI PREDICTION
+                </p>
+
+                <h2 id="diseaseName">
+                    --
+                </h2>
+
+                <p id="className">
+                    --
+                </p>
+
+            </div>
+
+
+            <!-- CONFIDENCE -->
+
+            <div class="confidence-box">
+
+                <div class="confidence-top">
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <strong id="confidence">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div class="progress">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLANATION -->
+
+            <div class="explanation">
+
+                <h3>
+                    🔥 Explainable AI
+                </h3>
+
+                <p>
+                    Grad-CAM highlights image regions
+                    that influenced the model's prediction.
+                </p>
+
+                <div class="gradcam-placeholder">
+
+                    Grad-CAM visualization
+                    will appear here
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DISCLAIMER ================= -->
+
+        <section class="disclaimer">
+
+            <strong>
+                ⚠️ Important
+            </strong>
+
+            <p>
+                This project is an educational and
+                research prototype. It is not a medical
+                diagnosis system and should not replace
+                professional medical advice.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Explainable AI Skin Disease Classification System
+        </p>
+
+        <p>
+            © 2026 Riyaz. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>
